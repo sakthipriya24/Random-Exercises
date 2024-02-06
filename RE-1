@@ -1,0 +1,36 @@
+/* Problem Statement: 
+An shopkeeper sells n items where the price of ith item is price[i]. 
+To maintain balance, the shopkeeper wishes to adjust the price of items such that 
+the median of prices is exactly k,in one move, the shop keeper can increase or decrease
+the price of any item by 1, and the shop keeper can perform this move any no of times
+find min no of moves in which median of prices becomes exactly k.
+
+Note: The index of the median of an array of m sorted elements where m is odd,is (m+1)/2.
+For eg,[2,5,4,1,1,1,6] sorted is [1,1,1,2,4,5,6], its length is 7 so the median is at
+index )7+1)/2=4 using 1-based indexing. Then median is 2.
+
+example, n=5, price=[4,2,1,4,7] and k=3.
+Decrease price[0] by 1, the resulting array is [3,2,1,4,7]; on sorting,
+this becomes [1,2,3,4,7], whose median equals k=3. Thus, in one move,
+the median becomes 3 and the answer is 1. */
+
+price = []
+print ("Number of items:");
+total_items=int(input())
+for i in range(0,total_items):
+    inp = int(input())
+    price.append(inp)
+print ("Which item's price you would like to adjust?")
+item_place=int(input())
+print ("Enter Operation: increase/decrease")
+operation = input()
+if operation == 'increase':
+    price[item_place]=price[item_place]+1
+elif operation == 'decrease':
+    # temp = price[item_place]
+    price[item_place]=price[item_place]-1
+else:
+    print ("Invalid Opeartion!!")
+price = sorted(price,key=int)
+print ("Median: ",round(sum(price)/total_items))
+print ("Solution: ",price[item_place])
