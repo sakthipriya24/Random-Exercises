@@ -4,3 +4,10 @@ he deletes them. Write a program which will see the list of roll numbers of the 
 and find how many emails are to be deleted. */
 
 Solution:
+inbox=[]
+print("No. of emails you received: ")
+tmails = int(input())
+for i in range(0,tmails):
+    mail = int(input())
+    inbox.append(mail)
+print ("No.of duplicate mails deleted: ",len(inbox)-len(set(inbox)))
