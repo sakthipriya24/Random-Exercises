@@ -38,3 +38,25 @@ Explanation :
    foldername[1]=’download’ is unique
    foldername[2]= ‘first’ is unique
    foldername[3]=’first’ is already existing . so add 1 to it and it become first1
+
+Solution:
+
+fol=[]
+nli=[]
+print ("No.of folders you would like to create: ")
+tf = int(input())
+for i in range(0,tf):
+    f=input()
+    fol.append(f)
+for i in range (0,len(fol)):
+    if (fol[:i+1].count(fol[i]))>1:
+        fname = fol[i] + str(fol[:i+1].count(fol[i])-1)
+        nli.append(fname)
+    else:
+        nli.append(fol[i])
+    
+print ("Before Naming: ",fol)
+print ("After Naming: ",nli)
+
+
+
