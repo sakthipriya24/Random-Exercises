@@ -1,0 +1,34 @@
+print("Please give any odd number from 1 to 10")
+odd = int(input())
+if odd%2!=0:
+    print ("//The door mat design matrix is ",odd,"X",odd*3)
+    print ("//WELCOME should be printed in the line ",round(odd/2))
+    for row in range(1,odd+1):
+        print("*", end = " ")
+        for column in range(1,odd*3):
+            if (row!=round(odd/2)):
+                print("*", end = " ")
+            else:
+                if column>= odd:
+                    if (column==odd):
+                        print ("W", end=" ")
+                    elif (column==odd+1):
+                        print ("E", end=" ")
+                    elif (column==odd+2):
+                        print ("L", end=" ")
+                    elif (column==odd+3):
+                        print ("C", end=" ")
+                    elif (column==odd+4):
+                        print ("O", end=" ")
+                    elif (column==odd+5):
+                        print ("M", end=" ")
+                    elif (column==odd+6):
+                        print ("E", end=" ")
+                    else:
+                        print ("*",end=" ")
+                else:
+                    print("*", end = " ")
+        print()
+else:
+    print ("Sorry, you entered an even number!!")
+    
